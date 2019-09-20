@@ -1,0 +1,1 @@
+Shopping list assignment for DanB/Michael
