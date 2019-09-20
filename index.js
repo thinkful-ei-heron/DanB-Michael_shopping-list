@@ -85,9 +85,10 @@ function handleItemCheckClicked() {
 function handleDeleteItemClicked() {
   // this function will be responsible for when users want to delete a shopping list
   // item
-  $('.js-item-delete').click(event => {
+  $('.js-shopping-list').on('click', '.js-item-delete', event => {
     const id = getItemIdFromElement(event.currentTarget);
-    $(id).remove();
+    const itemId = STORE.findIndex(item => item.id === id);
+    STORE.splice(itemId,1);
     renderShoppingList();
   })
   console.log('`handleDeleteItemClicked` ran')
